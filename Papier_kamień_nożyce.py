@@ -1,29 +1,29 @@
 import random
 
-options = ('papier', 'kamień', 'nożyce')
+options = ('rock', 'paper', 'scissors')
 user_guesses = 0
 computer_guesses = 0
-print('Wygraj 5 razy z komputerem, aby móc wygrać całą grę!')
+print('Win 5 rounds to win the whole game!')
 
 while True:
     random_element = random.choice(options)
-    my_choice = input('Wybierz papier, kamień lub nożyce: ')
-    if my_choice == 'papier' and random_element == 'kamień' or \
-            my_choice == 'kamień' and random_element == 'nożyce' or \
-            my_choice == 'nożyce' and random_element == 'papier':
-        print(f'Komputer wylosował: {random_element}')
-        print('WYGRAŁEŚ Z KOMPUTEREM!')
+    my_choice = input('Type rock, paper or scissors: ')
+    if my_choice == 'paper' and random_element == 'rock' or \
+            my_choice == 'rock' and random_element == 'scissors' or \
+            my_choice == 'scissors' and random_element == 'paper':
+        print(f'The computer has chosen: {random_element}')
+        print('You have won the round with the computer!')
         user_guesses += 1
         if user_guesses == 5:
-            print("Koniec! Wygrałeś całą grę!")
+            print('Congratulations! You have won the game!')
             break
     elif my_choice == random_element:
-        print(f'Komputer wylosował: {random_element}')
-        print('REMIS! ')
+        print(f'The computer has chosen: {random_element}')
+        print('Draw! ')
     else:
-        print('Komputer wylosował:', random_element)
-        print('KOMPUTER WYGRAŁ Z TOBĄ! ')
+        print('The computer has chosen:', random_element)
+        print('The coumputer has won this round! ')
         computer_guesses += 1
         if computer_guesses == 5:
-            print("Niestety, ale przegrałeś całą z komputerem. Spróbuj ponownie!")
+            print('Unfortunately, you have lost the game. Try again!')
             break
